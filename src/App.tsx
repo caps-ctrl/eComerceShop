@@ -1,7 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { Suspense } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { BrowserRouter, useLocation, useRoutes } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 // Lazy imports
 const Home = React.lazy(() => import("./pages/Home"));
@@ -35,7 +35,6 @@ const AnimatedRouter = () => {
         {
           element: (
             <PageWraper>
-              {" "}
               <Home />
             </PageWraper>
           ),
@@ -44,7 +43,7 @@ const AnimatedRouter = () => {
         {
           element: (
             <PageWraper>
-              <Contact />{" "}
+              <Contact />
             </PageWraper>
           ),
           path: "contact",
@@ -60,8 +59,7 @@ const AnimatedRouter = () => {
         {
           element: (
             <PageWraper>
-              {" "}
-              <Cart />{" "}
+              <Cart />
             </PageWraper>
           ),
           path: "cart",
@@ -88,7 +86,6 @@ const AnimatedRouter = () => {
 
   return (
     <AnimatePresence mode="wait">
-      {" "}
       <React.Fragment key={location.pathname}>{router}</React.Fragment>
     </AnimatePresence>
   );
@@ -96,11 +93,37 @@ const AnimatedRouter = () => {
 
 const App = () => {
   return (
-    <div>
+    <HelmetProvider>
+      <Helmet>
+        {/* Meta SEO */}
+        <title>Mini Shop – Najlepsze produkty w świetnych cenach!</title>
+        <meta
+          name="description"
+          content="Mini Shop – odkryj najlepsze produkty w świetnych cenach. Dołącz do naszej społeczności i korzystaj z promocji!"
+        />
+        <meta
+          name="keywords"
+          content="sklep, produkty, promocje, zakupy, ecommerce"
+        />
+        <meta name="author" content="Mini Shop" />
+
+        {/* Dynamiczny theme-color */}
+        <meta
+          name="theme-color"
+          content="#facc15"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#1c1917"
+          media="(prefers-color-scheme: dark)"
+        />
+      </Helmet>
+
       <BrowserRouter>
         <AnimatedRouter />
       </BrowserRouter>
-    </div>
+    </HelmetProvider>
   );
 };
 
