@@ -1,14 +1,16 @@
 import React from "react";
-import Home from "./pages/Home";
-import RootLayout from "./layouts/RootLayout";
-import Contact from "./pages/Contact";
-import Products from "./pages/Products";
-import Cart from "./pages/Cart";
 import { motion } from "framer-motion";
 import { BrowserRouter, useLocation, useRoutes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+
+// Lazy imports
+const Home = React.lazy(() => import("./pages/Home"));
+const RootLayout = React.lazy(() => import("./layouts/RootLayout"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+const Products = React.lazy(() => import("./pages/Products"));
+const Cart = React.lazy(() => import("./pages/Cart"));
+const Login = React.lazy(() => import("./pages/Login"));
+const Register = React.lazy(() => import("./pages/Register"));
 
 const PageWraper = ({ children }: { children: React.ReactNode }) => {
   return (
