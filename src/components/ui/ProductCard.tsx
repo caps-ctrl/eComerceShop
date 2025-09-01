@@ -16,7 +16,7 @@ export default function ProductCard({
   image,
   id,
 }: ProductCardProps) {
-  const MotionButton = motion(Button);
+  const MotionButton = motion.create(Button);
   const dispatch = useDispatch();
   const handleAddToCart = (product: ProductCardProps) => {
     dispatch(addToCart(product));
