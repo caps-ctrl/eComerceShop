@@ -36,12 +36,14 @@ export default function Home() {
           >
             Najlepsze produkty w świetnych cenach 🚀
           </motion.p>
-          <Button
-            size="lg"
-            className="bg-yellow-400 text-black hover:bg-yellow-500"
-          >
-            Zobacz ofertę
-          </Button>
+          <NavLink to={"/products"}>
+            <Button
+              size="lg"
+              className="bg-yellow-400 text-black hover:bg-yellow-500"
+            >
+              Zobacz ofertę
+            </Button>
+          </NavLink>
         </div>
       </section>
 

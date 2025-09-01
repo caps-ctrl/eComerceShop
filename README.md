@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# 🛒 e-CommerceShop – Frontend React Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+e-CommerceShop to aplikacja typu SPA stworzona w **React + TypeScript**, pozwalająca na przeglądanie produktów i zarządzanie koszykiem.  
+Globalny stan aplikacji jest zarządzany za pomocą **Redux Toolkit**, a formularze z walidacją obsługiwane są przez **Zod + React Hook Form**.  
 
-Currently, two official plugins are available:
+🔗 **Live demo:** [e-CommerceShop](https://moje-cv-ecomerceshop.vercel.app/)  
+📂 **Repozytorium:** [GitHub](https://github.com/caps-ctrl/eComerceShop)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Funkcje
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🛍️ **Przeglądanie produktów** – lista produktów z możliwością dodawania do koszyka  
+- 🧾 **Walidacja formularzy** – Zod + React Hook Form  
+- 🖥️ **Responsywność** – działa na urządzeniach mobilnych i desktopowych  
+- 🎨 **TailwindCSS** – spójny design i szybkie stylowanie  
+- 🧩 **shadcn/ui** – gotowe komponenty UI  
+- 🔀 **React Router** – nawigacja między stronami aplikacji  
+- 🛠️ **Redux Toolkit** – globalny stan aplikacji  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Technologie
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| 🛠️ Technologia              | Opis                                      | 
+| 🔲--------------------------|-------------------------------------------|
+| ⚛️ React                    | Komponenty funkcyjne, SPA                 |
+| 🔷 TypeScript               | Typowanie i bezpieczeństwo kodu           |
+| 🔀 React Router             | Nawigacja między stronami                 |
+| 🛠️ Redux Toolkit            | Globalny stan aplikacji                   |
+| 🎨 TailwindCSS              | Stylowanie i responsywność                |
+| 🧩 shadcn/ui                | Komponenty UI                             |
+| 🧪 Zod                      | Walidacja formularzy                      |
+| 📝 React Hook Form          | Obsługa formularzy                        |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📝 TODO / Plany rozwoju
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Dodanie backendu dla możliwości rejestrowania i logowania użytkowników  
+- Dodanie funkcji edytowania, dodawania i odejmowania produktów w aplikacji  
+- Pisanie testów jednostkowych i E2E  
+
+---
+
+## 🔧 Instalacja
+
+Aby uruchomić projekt lokalnie:
+
+```bash
+git clone https://github.com/caps-ctrl/eComerceShop.git
+cd eComerceShop
+npm install
+npm run dev
