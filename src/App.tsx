@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BrowserRouter, useLocation, useRoutes } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
